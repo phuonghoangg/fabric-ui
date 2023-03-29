@@ -1,0 +1,98 @@
+.wrapper {
+  height: inherit;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 42px;
+}
+
+.inner {
+  width: 1075px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-1 {
+  color: #f00;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+.title-2 {
+  font-size: 40px;
+  color: var(--text-black-color);
+  font-weight: 800;
+  margin: 0 0 24px;
+}
+.wrap-team {
+  height: 400px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  max-height: inherit;
+  background-color: #f2f2f4;
+  margin: 20px;
+  padding: 20px;
+  opacity: 0.5;
+  &:hover {
+    opacity: unset;
+    transition: 0.6s;
+  }
+}
+.icon {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  color: #f00;
+}
+
+.card-top {
+  display: flex;
+  width: 200px;
+  margin-bottom: 16px;
+}
+.wrap-name {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.name {
+  font-size: 16px;
+  color: var(--text-black-color);
+  font-weight: 500;
+}
+.business-name {
+  font-size: 13px;
+  color: #757575;
+}
+.card-bottom {
+  font-size: 16px;
+  color: #757575;
+}
+
+@media screen and (max-width: 1000px) {
+  .wrap-team {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .wrap-team {
+    height: 350px;
+  }
+  .title-2 {
+    font-size: 27px;
+  }
+}

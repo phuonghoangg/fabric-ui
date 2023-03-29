@@ -1,0 +1,139 @@
+.wrapper {
+  min-height: 450px;
+  max-height: inherit;
+  width: 100%;
+  background-color: #f2f2f4 !important;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.quotes {
+  width: 650px;
+}
+.title-1 {
+  color: #ff0000;
+  font-size: 16px;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+.title-2 {
+  color: var(--text-black-color);
+  font-size: 40px;
+  margin: 0 0 24px;
+  font-weight: 700;
+}
+.title-3 {
+  color: #757575;
+  font-size: 16px;
+  margin: 0 0 24px;
+  font-weight: 400;
+}
+.number-count {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrap-count {
+  display: flex;
+  flex-direction: column;
+}
+
+.number {
+  color: #ff0000;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.description-number {
+  margin: 0 0 24px;
+  color: var(--text-black-color);
+  font-weight: 700;
+}
+
+.contact {
+  width: 425px;
+  background-color: var(--primary);
+  height: 100%;
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-contact {
+  background-color: #fff;
+  width: 80%;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 16.5px 32px 16.5px 14px;
+  outline: none;
+  border: none;
+  color: #495057;
+}
+
+.btn-get {
+  background-color: var(--text-black-color);
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 16px 12px;
+  width: 80%;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  outline: 2px solid transparent;
+  cursor: pointer;
+  &:hover {
+    background-color: #101017;
+  }
+  &:active {
+    box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .inner {
+    flex-direction: column;
+  }
+  .quotes {
+    padding-top: 48px;
+  }
+  .contact {
+    width: 650px;
+    height: 400px;
+    margin: 40px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .inner {
+    flex-direction: column;
+  }
+  .quotes {
+    padding-top: 48px;
+    width: 100%;
+  }
+  .title-2 {
+    font-size: 28px;
+  }
+  .number-count {
+    flex-direction: column;
+  }
+  .number {
+    font-size: 28px;
+  }
+  .contact {
+    width: 100%;
+    height: 400px;
+    margin: 40px 0 0 0;
+  }
+}

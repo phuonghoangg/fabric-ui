@@ -1,0 +1,29 @@
+.wrapper {
+  min-height: 550px;
+  max-height: inherit;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // padding: 50px 0 70px 0;
+}
+
+.inner {
+  width: 1075px;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-1 {
+  color: #f00;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+.title-2 {
+  font-size: 40px;
+  color: var(--text-black-color);
+  font-weight: 800;
+  margin: 0 0 24px;
+}

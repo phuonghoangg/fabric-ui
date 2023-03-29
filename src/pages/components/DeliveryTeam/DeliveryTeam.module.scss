@@ -1,0 +1,123 @@
+.wrapper {
+  min-height: 550px;
+  max-height: inherit;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // padding: 50px 0 70px 0;
+}
+
+.inner {
+  width: 1075px;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-1 {
+  color: #f00;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+.title-2 {
+  font-size: 40px;
+  color: var(--text-black-color);
+  font-weight: 800;
+  margin: 0 0 24px;
+}
+.wrap-team {
+  height: inherit;
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto auto auto;
+}
+
+.background {
+  width: 255px;
+  height: 350px;
+  background-color: #ec4137;
+  display: flex;
+  flex-direction: column;
+}
+
+.color-bottom {
+  background-color: #efefef;
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.name {
+  font-size: 20px;
+  color: var(--text-black-color);
+  margin: 0 0 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.role {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #757575;
+}
+.bottom-hover {
+  height: 50px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-bottom {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.icon {
+  &:hover {
+    color: #fff;
+    background-color: black;
+  }
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid black;
+
+  color: black;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    padding-top: 20px;
+  }
+  .inner {
+    width: 80%;
+    height: 1000px;
+  }
+  .wrap-team {
+    grid-template-columns: auto auto;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    padding-top: 20px;
+  }
+  .title-2 {
+    text-align: center;
+    font-size: 27px;
+  }
+  .inner {
+    width: 80%;
+    height: 2000px;
+  }
+  .wrap-team {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+}
