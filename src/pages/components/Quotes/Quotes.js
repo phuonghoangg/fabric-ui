@@ -16,8 +16,8 @@ const Quotes = () => {
       <div className={cx('inner')}>
         <div className={cx('quotes')}>
           <div className={cx('title-1')}>GET A QUOTE</div>
-          <div className={cx('title-2')}>Request A Free Quote</div>
-          <div className={cx('title-3')}>Please contact us for a detailed quote and consultation</div>
+          <div className={cx('title-2')}>Request A Free Cost</div>
+          <div className={cx('title-3')}>Please contact us for a detailed cost and consultation</div>
           <div className={cx('number-count')}>
             <div className={cx('wrap-count')}>
               <CountUp enableScrollSpy end={250} duration={5} className={cx('number')} />

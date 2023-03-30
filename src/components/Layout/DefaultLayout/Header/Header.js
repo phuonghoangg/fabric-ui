@@ -50,49 +50,51 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className={cx('content')}>
-          <a href="/">
-            <img src={logo} href="/a" alt="" className={cx('logo')} />
-          </a>
+        <div className={cx('inner-bottom')}>
+          <div className={cx('content')}>
+            <a href="/">
+              <img src={logo} href="/a" alt="" className={cx('logo')} />
+            </a>
 
-          <div className={cx('wrapper-menu')}>
-            <Menu>
-              <MenuItem title="Home" to="/" />
-              <MenuItem title="About" to="/aboutUs" />
-              <MenuItem title="Service" to="/service" />
-              <MenuItem title="Price" to="/price" />
-              <MenuItem title="Blog" to="/blog" />
-              <MenuItem title="Contact" to="/contact" />
-            </Menu>
-          </div>
-          <div className={cx('button-login')}>Login</div>
-
-          <Tippy
-            interactive
-            placement="bottom"
-            onClickOutside={hide}
-            visible={visible}
-            render={(attrs) => (
-              <div className={cx('collapse-result')} tabIndex="-1" {...attrs}>
-                <PopperWrapper>
-                  <div className={cx('collapse-menu')}>
-                    <Menu>
-                      <MenuItem title="Home" to="/" visible={visible} setVisible={setVisible} />
-                      <MenuItem title="About" to="/aboutUs" visible={visible} setVisible={setVisible} />
-                      <MenuItem title="Service" to="/service" visible={visible} setVisible={setVisible} />
-                      <MenuItem title="Price" to="/price" />
-                      <MenuItem title="Blog" to="/blog" />
-                      <MenuItem title="Contact" to="/contact" />
-                    </Menu>
-                  </div>
-                </PopperWrapper>
-              </div>
-            )}
-          >
-            <div className={cx('collapse')} onClick={visible ? hide : show}>
-              <FontAwesomeIcon icon={faBars} fontSize={40} />
+            <div className={cx('wrapper-menu')}>
+              <Menu>
+                <MenuItem title="Home" to="/" />
+                <MenuItem title="About" to="/aboutUs" />
+                <MenuItem title="Service" to="/service" />
+                {/* <MenuItem title="Price" to="/price" /> */}
+                {/* <MenuItem title="Blog" to="/blog" /> */}
+                <MenuItem title="Contact" to="/contact" />
+              </Menu>
             </div>
-          </Tippy>
+            <div className={cx('button-login')}>Login</div>
+
+            <Tippy
+              interactive
+              placement="bottom"
+              onClickOutside={hide}
+              visible={visible}
+              render={(attrs) => (
+                <div className={cx('collapse-result')} tabIndex="-1" {...attrs}>
+                  <PopperWrapper>
+                    <div className={cx('collapse-menu')}>
+                      <Menu>
+                        <MenuItem title="Home" to="/" visible={visible} setVisible={setVisible} />
+                        <MenuItem title="About" to="/aboutUs" visible={visible} setVisible={setVisible} />
+                        <MenuItem title="Service" to="/service" visible={visible} setVisible={setVisible} />
+                        <MenuItem title="Price" to="/price" />
+                        <MenuItem title="Blog" to="/blog" />
+                        <MenuItem title="Contact" to="/contact" />
+                      </Menu>
+                    </div>
+                  </PopperWrapper>
+                </div>
+              )}
+            >
+              <div className={cx('collapse')} onClick={visible ? hide : show}>
+                <FontAwesomeIcon icon={faBars} fontSize={40} />
+              </div>
+            </Tippy>
+          </div>
         </div>
       </div>
     </header>

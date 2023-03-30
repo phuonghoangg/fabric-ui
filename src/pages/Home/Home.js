@@ -1,14 +1,24 @@
 import classNames from 'classnames/bind';
+import { useEffect } from 'react';
 import AboutUs from '../components/AboutUs';
 import Blog from '../components/Blog';
 import Business from '../components/Business';
 import DeliveryTeam from '../components/DeliveryTeam';
+import OurService from '../components/OurService';
 import Quotes from '../components/Quotes';
 import Testimonial from '../components/Testimonial';
 import styles from './Home.module.scss';
 const cx = classNames.bind(styles);
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  });
   return (
     <div className={cx('wrapper')}>
       <div className={cx('banner')}>

@@ -6,6 +6,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: fixed;
+  z-index: 999;
 }
 .inner {
   height: 100%;
@@ -29,6 +31,14 @@
   justify-content: space-between;
   align-items: center;
 }
+.inner-bottom {
+  background-color: #fff;
+  height: 90px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .contact {
   color: white;
   font-size: 13px;
@@ -46,6 +56,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
 }
 
 .logo {
