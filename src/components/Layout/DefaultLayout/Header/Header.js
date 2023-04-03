@@ -60,7 +60,9 @@ const Header = () => {
               <Menu>
                 <MenuItem title="Home" to="/" />
                 <MenuItem title="About" to="/aboutUs" />
+                <MenuItem title="Apparel" to="/apparel" />
                 <MenuItem title="Service" to="/service" />
+
                 {/* <MenuItem title="Price" to="/price" /> */}
                 {/* <MenuItem title="Blog" to="/blog" /> */}
                 <MenuItem title="Contact" to="/contact" />
