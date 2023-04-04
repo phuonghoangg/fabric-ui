@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay, faHandshakeAlt, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { Box, Modal, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -25,6 +26,7 @@ const AboutUs = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const navigate = useNavigate();
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
@@ -44,6 +46,11 @@ const AboutUs = () => {
             range of high-quality, fashionable, and sustainable ready fabrics made in Vietnam, as well as representing
             many well-known material manufacturers. We have expanded into the food industry with their coconut chips
             snack, COCOMOLAT®.
+            {/* <div style={{ textAlign: 'end' }}>
+              <p onClick={() => navigate('/aboutUs')} className={cx('read-more')}>
+                Read More
+              </p>
+            </div> */}
           </div>
           <div className={cx('play-button')} onClick={handleOpen}>
             <FontAwesomeIcon icon={faCirclePlay} color="#FF4800" fontSize={70} beatFade style={{ color: '#FB692F' }} />

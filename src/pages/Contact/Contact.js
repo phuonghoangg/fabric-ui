@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import BannerChild from '../components/BannerChild';
 import styles from './Contact.module.scss';
 import FormContact from './FormContact';
+import DeliveryTeam from '../components/DeliveryTeam/DeliveryTeam';
+import Testimonial from '../components/Testimonial/Testimonial';
 const cx = classNames.bind(styles);
 
 const Contact = () => {
@@ -18,7 +20,9 @@ const Contact = () => {
     <div className={cx('wrapper')}>
       <BannerChild title="Contact" />
 
+      <DeliveryTeam />
       <FormContact />
+      <Testimonial />
     </div>
   );
 };

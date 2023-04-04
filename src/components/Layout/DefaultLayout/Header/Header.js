@@ -66,6 +66,7 @@ const Header = () => {
                 {/* <MenuItem title="Price" to="/price" /> */}
                 {/* <MenuItem title="Blog" to="/blog" /> */}
                 <MenuItem title="Contact" to="/contact" />
+                <MenuItem title="Admin" to="/admin" />
               </Menu>
             </div>
             <div className={cx('button-login')}>Login</div>
@@ -86,6 +87,7 @@ const Header = () => {
                         <MenuItem title="Price" to="/price" />
                         <MenuItem title="Blog" to="/blog" />
                         <MenuItem title="Contact" to="/contact" />
+                        <MenuItem title="Admin" to="/admin" />
                       </Menu>
                     </div>
                   </PopperWrapper>

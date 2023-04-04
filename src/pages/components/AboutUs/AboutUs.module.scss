@@ -37,6 +37,13 @@
   max-width: 650px;
   height: inherit;
 }
+.read-more {
+  font-weight: 500;
+  cursor: pointer;
+  &:hover {
+    color: var(--primary);
+  }
+}
 .title-1 {
   font-weight: 700;
   color: #f00;

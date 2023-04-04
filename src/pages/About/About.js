@@ -7,6 +7,7 @@ import BannerChild from '../components/BannerChild';
 import Business from '../components/Business';
 import DeliveryTeam from '../components/DeliveryTeam';
 import styles from './About.module.scss';
+import OurBrand from '../components/OurBrand/OurBrand';
 const cx = classNames.bind(styles);
 
 const About = () => {
@@ -22,6 +23,7 @@ const About = () => {
     <div className={cx('wrapper')}>
       <BannerChild title="About" />
       <AboutUs />
+      <OurBrand />
       <Business />
       <DeliveryTeam />
     </div>

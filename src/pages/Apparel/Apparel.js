@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Apparel.module.scss';
 import gridIcon from '~/assets/image/grid_icon.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 
 import Tippy from '@tippyjs/react/headless';
@@ -12,6 +12,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp, faCheck, faChevronDown, faChevronUp, faX } from '@fortawesome/free-solid-svg-icons';
 import { Checkbox, Collapse, FormControlLabel } from '@mui/material';
 import { pink, grey } from '@mui/material/colors';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllType } from '~/redux/apiRequest';
 const cx = classNames.bind(styles);
 
 const intro = {
@@ -140,6 +142,7 @@ const dataProduct = [
   },
 ];
 const Apparel = () => {
+  const allType = useSelector((state) => state.typeProduct.typeProduct?.allType);
   const [open, setOpen] = useState(false);
   const [openCollapseProduct, setOpenCollapseProduct] = useState(true);
   const [openCollapseWeight, setOpenCollapseWeight] = useState(true);
@@ -147,6 +150,10 @@ const Apparel = () => {
 
   const [checkedProduct, setCheckedProduct] = useState([]);
   const [checkedWeight, setCheckedWeight] = useState([]);
+
+  console.log('checked product', checkedProduct);
+  const dispatch = useDispatch();
+
   const handleCheckProduct = (id) => {
     setCheckedProduct((prev) => {
       const isChecked = checkedProduct.includes(id);
@@ -188,6 +195,10 @@ const Apparel = () => {
   const hide = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    getAllType(dispatch);
+  }, [dispatch]);
   return (
     <div className={cx('wrapper')}>
       <div className={cx('intro')}>
@@ -251,16 +262,16 @@ const Apparel = () => {
                       Clear All
                     </div>
                   </div>
-                  {/* CHECKED PRODUCT TYPE */}
+                  {/* CHECKED PRODUCT TYPE REFINE */}
                   {checkedProduct.map((item, index) => {
                     return (
                       <div key={item} className={cx('item-checked')}>
                         <div>
-                          {typeProduct.map((typeItem, index) => (
+                          {allType.map((typeItem, index) => (
                             <div key={index}>
-                              {typeItem.id === item && (
+                              {typeItem._id === item && (
                                 <div className={cx('title-product-type')}>
-                                  product type: <span>{typeItem.name}</span>
+                                  product type: <span>{typeItem.typeName}</span>
                                 </div>
                               )}
                             </div>
@@ -270,7 +281,7 @@ const Apparel = () => {
                       </div>
                     );
                   })}
-                  {/* CHECKED PRODUCT MAP */}
+                  {/* CHECKED PRODUCT MAP REFINE */}
                   {checkedWeight.map((item, index) => {
                     return (
                       <div key={item} className={cx('item-checked')}>
@@ -311,31 +322,30 @@ const Apparel = () => {
                 </div>
                 <Collapse in={openCollapseProduct} timeout="auto" unmountOnExit>
                   <div className={cx('collapse-des')}>
-                    {typeProduct.map((typeItem) => (
+                    {allType?.map((typeItem, index) => (
                       <div
-                        key={typeItem.id}
+                        key={typeItem._id}
                         className={cx('flex-checkbox')}
                         onClick={() => {
-                          handleCheckProduct(typeItem.id);
+                          handleCheckProduct(typeItem._id);
                         }}
                       >
-                        <div className={cx('wrap-checkbox')} key={typeItem.id}>
+                        <div className={cx('wrap-checkbox')}>
                           <input
                             className={cx('checkbox-type')}
                             type="checkbox"
-                            checked={checkedProduct.includes(typeItem.id)}
-                            onChange={() => handleCheckProduct(typeItem.id)}
+                            checked={checkedProduct.includes(typeItem._id)}
+                            onChange={() => {}}
                           />
-                          {checkedProduct.includes(typeItem.id) && (
+                          {checkedProduct.includes(typeItem._id) && (
                             <FontAwesomeIcon className={cx('check')} icon={faCheck} />
                           )}
-                          <label className={checkedProduct.includes(typeItem.id) ? cx('label-active') : cx('')}>
-                            {' '}
-                            {typeItem.name}
+                          <label className={checkedProduct.includes(typeItem._id) ? cx('label-active') : cx('')}>
+                            {typeItem.typeName}
                           </label>
                         </div>
-                        <label className={checkedProduct.includes(typeItem.id) ? cx('label-active') : cx('')}>
-                          ({typeItem.total})
+                        <label className={checkedProduct.includes(typeItem._id) ? cx('label-active') : cx('')}>
+                          ({typeItem.products.length})
                         </label>
                       </div>
                     ))}
