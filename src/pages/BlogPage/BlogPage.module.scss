@@ -1,0 +1,270 @@
+.wrapper {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  --inner-blog-width: 1100px;
+}
+.inner {
+  width: var(--inner-blog-width);
+  height: inherit;
+  margin-top: 40px;
+  display: flex;
+  padding: 60px 0;
+  justify-content: center;
+}
+
+.list-blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  justify-content: center;
+}
+.blog {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  margin: 10px 10px 10px 10px;
+}
+.image {
+  width: 100%;
+}
+
+.content {
+  padding: 30px;
+  background-color: #f2f2f4;
+}
+.title-content {
+  color: var(--text-black-color);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+.description {
+  font-size: 16px;
+  color: #757575;
+  margin: 0 0 16px;
+}
+.read-more {
+  display: flex;
+  width: 105px;
+  color: var(--primary);
+  font-size: 16px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--primary);
+  align-items: center;
+  &:hover {
+    color: #b33200;
+  }
+  p {
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 3px;
+  }
+}
+
+.date-time {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  right: 20px;
+  top: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.date {
+  color: var(--text-black-color);
+  font-size: 24px;
+  font-weight: 800;
+}
+.month {
+  color: #fff;
+  font-size: 13px;
+}
+.bla {
+  padding-top: 20px;
+  button {
+    font-size: 15px;
+    color: #757575;
+  }
+}
+.recent {
+  width: 30%;
+  height: inherit;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.input-search {
+  width: 100%;
+  height: 108px;
+  background-color: #f2f2f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  input {
+    width: 80%;
+    height: 48px;
+    padding-left: 20px;
+    color: #757575;
+    font-size: 16px;
+    border: 2px solid transparent;
+    outline: none;
+    &:focus {
+      border: 2px solid rgb(243, 125, 125);
+      transition: 0.5s;
+    }
+  }
+}
+
+.search-icon {
+  height: 48px;
+  width: 48px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .icon {
+    color: #fff;
+    font-size: 20px;
+  }
+}
+
+.list-recent {
+  padding-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--text-black-color);
+  font-size: 28px;
+  font-weight: 700;
+}
+.list-post {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f4;
+  margin: 10px 0 0 0;
+}
+.image-post {
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.des-post {
+  padding: 10px;
+}
+.plain-text {
+  padding-top: 20px;
+  width: 100%;
+}
+.inner-plain {
+  background-color: #f2f2f4;
+  padding: 30px;
+  margin-top: 24px;
+  line-height: 1.4;
+  text-align: center;
+}
+.btn-read {
+  color: #fff;
+  background-color: var(--primary);
+  padding: 8px 24px;
+  font-size: 16px;
+  height: 42px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #c90505;
+    transition: 0.5;
+  }
+}
+
+// @media screen and (max-width: 1200px) {
+//   .blog {
+//     width: 450px;
+//   }
+//   .date-time {
+//     top: 310px;
+//   }
+// }
+
+@media screen and (max-width: 1000px) {
+  .inner {
+    width: 90%;
+  }
+
+  .blog {
+    width: 500px;
+  }
+  .date-time {
+    top: 345px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .list-blog {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  .blog {
+    width: 400px;
+  }
+  .date-time {
+    top: 270px;
+  }
+  .title-content {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .recent {
+    width: 90%;
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .list-blog {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  .blog {
+    width: 350px;
+  }
+  .date-time {
+    top: 225px;
+  }
+  .title-content {
+    font-size: 22px;
+    font-weight: 600;
+  }
+}

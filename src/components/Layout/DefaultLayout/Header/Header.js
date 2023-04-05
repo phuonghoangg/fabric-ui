@@ -64,7 +64,7 @@ const Header = () => {
                 <MenuItem title="Service" to="/service" />
 
                 {/* <MenuItem title="Price" to="/price" /> */}
-                {/* <MenuItem title="Blog" to="/blog" /> */}
+                <MenuItem title="Blog" to="/blog" />
                 <MenuItem title="Contact" to="/contact" />
                 <MenuItem title="Admin" to="/admin" />
               </Menu>

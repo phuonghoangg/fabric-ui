@@ -8,8 +8,8 @@ const OurService = () => {
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <div className={cx('title-1')}>DELIVERY TEAM</div>
-        <div className={cx('title-2')}>Meet Our Delivery Team</div>
+        <div className={cx('title-1')}>OUR SERVICES</div>
+        <div className={cx('title-2')}>Best Logistic Services</div>
         <div className={cx('logistics')}>
           <div className={cx('wrap-vehicle')}>
             <div className={cx('banner-icon')}>

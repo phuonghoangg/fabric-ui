@@ -8,6 +8,8 @@ import Business from '../components/Business';
 import DeliveryTeam from '../components/DeliveryTeam';
 import styles from './About.module.scss';
 import OurBrand from '../components/OurBrand/OurBrand';
+import Experience from '../components/Experience/Experience';
+import FormContact from '../Contact/FormContact';
 const cx = classNames.bind(styles);
 
 const About = () => {
@@ -24,8 +26,9 @@ const About = () => {
       <BannerChild title="About" />
       <AboutUs />
       <OurBrand />
+      <Experience />
       <Business />
-      <DeliveryTeam />
+      <FormContact />
     </div>
   );
 };

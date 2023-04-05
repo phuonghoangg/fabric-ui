@@ -1,5 +1,5 @@
 .wrapper {
-  min-height: 450px;
+  min-height: 350px;
   max-height: inherit;
   width: 100%;
   display: flex;
@@ -25,12 +25,18 @@
   font-size: 40px;
   color: var(--text-black-color);
   font-weight: 800;
-  margin: 0 0 24px;
+  margin: 0 0 30px;
+}
+.title-3 {
+  font-size: 16px;
+  color: #757575;
+  line-height: 1.4;
+  margin: 0 0 15px;
 }
 .logistics {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .wrap-vehicle {
@@ -38,6 +44,7 @@
   height: inherit;
   display: flex;
   flex-direction: column;
+  margin: 10px;
 }
 .banner-icon {
   height: 80px;

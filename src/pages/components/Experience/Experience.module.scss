@@ -1,0 +1,244 @@
+.wrapper {
+  min-height: 350px;
+  max-height: inherit;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 35px 0;
+  --inner-width-exper: 1075px;
+}
+.inner {
+  width: var(--inner-width-exper);
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title-1 {
+  color: #f00;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+.title-2 {
+  font-size: 40px;
+  color: var(--text-black-color);
+  font-weight: 800;
+  margin: 0 0 30px;
+}
+.title-3 {
+  font-size: 16px;
+  color: #757575;
+  line-height: 1.4;
+  margin: 0 0 15px;
+}
+.logistics {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap-vehicle {
+  width: 240px;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.banner-icon {
+  height: 80px;
+  width: 100%;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 24px;
+  span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    padding-left: 20px;
+  }
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.des {
+  text-align: center;
+  margin: 0 0 16px;
+  color: #757575;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.read-more {
+  text-align: center;
+  font-size: 16px;
+  color: var(--primary);
+  width: 100px;
+  border-bottom: 1px solid #dee2e6 !important;
+  cursor: pointer;
+  &:hover {
+    color: #b33200;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .inner {
+    width: 650px;
+  }
+  .logistics {
+    flex-wrap: wrap;
+  }
+  .wrap-vehicle {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title-2 {
+    font-size: 27px;
+  }
+  .logistics {
+    justify-content: center;
+  }
+  .wrap-vehicle {
+    width: 80%;
+  }
+}
+
+// inner-descript-1ion
+
+.inner-descript-1 {
+  width: var(--inner-width-exper);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+.inner-descript-2 {
+  width: var(--inner-width-exper);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+.image-logo {
+  width: 425px;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  width: 100%;
+  height: 100%;
+}
+.logo-description {
+  width: 100%;
+  padding: 24px;
+  color: #1f1f2e;
+  font-weight: 700;
+  font-size: 28px;
+  text-align: center;
+  background-color: var(--primary);
+}
+
+.info {
+  max-width: 650px;
+  height: inherit;
+  padding-left: 20px;
+}
+.info-2 {
+  max-width: 650px;
+  height: inherit;
+  padding-right: 10px;
+}
+.read-more {
+  font-weight: 500;
+  cursor: pointer;
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+.description {
+  color: #757575;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+.play-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.title-play {
+  margin-left: 24px;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text-black-color);
+}
+
+.iframe-utube {
+  width: 500px;
+  height: 400px;
+}
+@media screen and (max-width: 1000px) {
+  .inner-descript-1,
+  .inner-descript-2 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-logo {
+    width: 650px;
+    margin: 0;
+  }
+  .logo {
+    width: 650px;
+    height: 400px;
+  }
+  .logo-description {
+    font-size: 25px;
+  }
+  .info {
+    padding-left: 0;
+  }
+  .info-2 {
+    padding-right: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .inner-descript-1,
+  .inner-descript-2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-logo {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  .logo {
+    width: 100%;
+    height: 200px;
+  }
+  .logo-description {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .iframe-utube {
+    width: 300px;
+    height: 300px;
+  }
+  .info {
+    padding-left: 0;
+  }
+}
