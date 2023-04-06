@@ -1,12 +1,12 @@
 import BannerChild from '../components/BannerChild/BannerChild';
 import classNames from 'classnames/bind';
 import styles from './BlogPage.module.scss';
-import Blog from '../components/Blog/Blog';
 import imgBlog1 from '~/assets/image/blog-1.jpg';
 import imgBlog2 from '~/assets/image/blog-2.jpg';
 import { Pagination, Stack } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -56,6 +56,7 @@ const data = [
 ];
 
 const BlogPage = () => {
+  const navigate = useNavigate();
   return (
     <div className={cx('wrapper')}>
       <BannerChild title="Blog" />
@@ -67,7 +68,7 @@ const BlogPage = () => {
               <div className={cx('content')}>
                 <div className={cx('title-content')}>{item.title}</div>
                 <div className={cx('description')}>{item.description}</div>
-                <div className={cx('read-more')}>
+                <div onClick={() => navigate('/blog/1')} className={cx('read-more')}>
                   read more <p>&gt;</p>
                 </div>
               </div>

@@ -5,6 +5,7 @@ import Contact from '~/pages/Contact';
 import Apparel from '~/pages/Apparel/Apparel';
 import Admin from '~/pages/Admin/Admin';
 import BlogPage from '~/pages/BlogPage/BlogPage';
+import BlogDetail from '~/pages/BlogPage/BlogDetail';
 
 const publicRoutes = [
   { path: '/', component: Home },
@@ -13,6 +14,7 @@ const publicRoutes = [
   { path: '/service', component: Service },
   { path: '/contact', component: Contact },
   { path: '/blog', component: BlogPage },
+  { path: '/blog/:id', component: BlogDetail },
   { path: '/admin', component: Admin },
 ];
 const privateRoutes = [];
