@@ -3,11 +3,13 @@ import classNames from 'classnames/bind';
 import styles from './Admin.module.scss';
 import CreateTypeProduct from './CreateTypeProduct/CreateTypeProduct';
 import CreateProduct from './CreateProduct/CreateProduct';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import CreateBlog from './CreateBlog/CreateBlog';
 const cx = classNames.bind(styles);
 
 const Admin = () => {
   const [tab, setTab] = useState(1);
+
   return (
     <div className={cx('wrapper')}>
       <BannerChild title="Admin" />
@@ -16,10 +18,13 @@ const Admin = () => {
           Type
         </div>
         <div onClick={() => setTab(2)} className={tab === 2 ? cx('btn-tab-active') : cx('btn-tab')}>
-          Product
+          Apparel
+        </div>
+        <div onClick={() => setTab(3)} className={tab === 3 ? cx('btn-tab-active') : cx('btn-tab')}>
+          Blog
         </div>
       </div>
-      {tab === 1 ? <CreateTypeProduct /> : <CreateProduct />}
+      {tab === 1 ? <CreateTypeProduct /> : tab === 2 ? <CreateProduct /> : <CreateBlog />}
     </div>
   );
 };

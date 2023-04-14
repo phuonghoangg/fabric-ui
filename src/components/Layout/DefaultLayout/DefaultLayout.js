@@ -34,7 +34,7 @@ const DefaultLayout = ({ children }) => {
       <div className={cx('content')}>{children}</div>
       <Footer />
       <div className={cx('button-go-top')} onClick={scrollToTop} style={{ display: visible ? 'inline' : 'none' }}>
-        <FontAwesomeIcon icon={faArrowUp} bounce fontSize={40} color="#ff4800" />
+        <FontAwesomeIcon icon={faArrowUp} bounce fontSize={40} color="#ec4137" />
       </div>
     </div>
   );

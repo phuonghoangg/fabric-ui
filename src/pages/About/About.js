@@ -24,10 +24,10 @@ const About = () => {
   return (
     <div className={cx('wrapper')}>
       <BannerChild title="About" />
-      <AboutUs />
+      <AboutUs readMore={false} />
       <OurBrand />
       <Experience />
-      <Business />
+      <Business readMore={false} />
       <FormContact />
     </div>
   );

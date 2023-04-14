@@ -1,5 +1,8 @@
 import classNames from 'classnames/bind';
 import styles from './OurBrand.module.scss';
+import logo1 from '~/assets/image/logo-01.png';
+import logo2 from '~/assets/image/logo-02.png';
+import logo3 from '~/assets/image/logo-03.png';
 const cx = classNames.bind(styles);
 
 const OurBrand = () => {
@@ -16,22 +19,10 @@ const OurBrand = () => {
           competitive Price with high Quality to our Customers.
         </div>
         <div className={cx('logistics')}>
-          <img
-            src="https://i0.wp.com/zeriatex.com/wp-content/uploads/2020/05/88c71aa46edbe3589097c5ea631670fa.jpg?w=200&ssl=1"
-            className={cx('wrap-vehicle')}
-            alt=""
-          />
+          <img src={logo1} className={cx('wrap-vehicle')} alt="" />
 
-          <img
-            src="https://i0.wp.com/zeriatex.com/wp-content/uploads/2020/05/88c71aa46edbe3589097c5ea631670fa.jpg?w=200&ssl=1"
-            className={cx('wrap-vehicle')}
-            alt=""
-          />
-          <img
-            src="https://i0.wp.com/zeriatex.com/wp-content/uploads/2020/05/88c71aa46edbe3589097c5ea631670fa.jpg?w=200&ssl=1"
-            className={cx('wrap-vehicle')}
-            alt=""
-          />
+          <img src={logo2} className={cx('wrap-vehicle')} alt="" />
+          <img src={logo3} className={cx('wrap-vehicle')} alt="" />
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@
 }
 
 .title-1 {
-  color: #f00;
+  color: var(--primary);
   font-size: 16px;
   font-weight: 800;
   margin: 0 0 8px;
@@ -37,8 +37,13 @@
 }
 .logistics {
   width: 100%;
+  height: 800px;
   display: flex;
-  justify-content: center;
+  overflow: auto;
+}
+.history {
+  object-fit: cover;
+  scale: 1.4;
 }
 
 .wrap-vehicle {
@@ -215,13 +220,18 @@
 }
 
 @media screen and (max-width: 600px) {
+  .inner,
   .inner-descript-1,
   .inner-descript-2 {
     flex-direction: column;
     align-items: center;
+    width: 90%;
+  }
+  .title-2 {
+    text-align: center;
   }
   .image-logo {
-    width: 100%;
+    width: 360px;
     text-align: center;
     margin: 0;
   }
@@ -233,12 +243,21 @@
     font-size: 15px;
     padding: 10px;
   }
-
+  .description {
+    margin: 0;
+  }
   .iframe-utube {
     width: 300px;
     height: 300px;
   }
   .info {
     padding-left: 0;
+  }
+  .logistics {
+    justify-content: flex-start;
+  }
+  .history {
+    height: 500px;
+    scale: 1.2;
   }
 }

@@ -21,7 +21,7 @@ const style = {
   padding: 0,
 };
 
-const AboutUs = () => {
+const AboutUs = ({ readMore }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -46,14 +46,16 @@ const AboutUs = () => {
             range of high-quality, fashionable, and sustainable ready fabrics made in Vietnam, as well as representing
             many well-known material manufacturers. We have expanded into the food industry with their coconut chips
             snack, COCOMOLAT®.
-            {/* <div style={{ textAlign: 'end' }}>
-              <p onClick={() => navigate('/aboutUs')} className={cx('read-more')}>
-                Read More
-              </p>
-            </div> */}
+            {readMore === true && (
+              <div style={{ textAlign: 'end' }}>
+                <p onClick={() => navigate('/aboutUs')} className={cx('read-more')}>
+                  Read More
+                </p>
+              </div>
+            )}
           </div>
           <div className={cx('play-button')} onClick={handleOpen}>
-            <FontAwesomeIcon icon={faCirclePlay} color="#FF4800" fontSize={70} beatFade style={{ color: '#FB692F' }} />
+            <FontAwesomeIcon icon={faCirclePlay} color="#ec4137" fontSize={70} beatFade style={{ color: '#ec4137' }} />
             <p className={cx('title-play')}>Play video</p>
           </div>
         </div>

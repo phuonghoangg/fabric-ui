@@ -8,13 +8,13 @@
   align-items: center;
   padding: 0 5px;
   &:hover {
-    background-color: #ff4800;
+    background-color: var(--primary);
     .title {
       color: #fff;
     }
   }
   &.active {
-    background-color: #ff4800;
+    background-color: var(--primary);
     .title {
       color: #fff;
     }

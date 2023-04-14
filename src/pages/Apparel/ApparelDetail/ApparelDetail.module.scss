@@ -1,0 +1,144 @@
+.wrapper {
+  --inner-width: 1200px;
+  --font-size-apparel: 14.5px;
+  --color-descrip: #555555;
+  margin-top: var(--padding-header);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 800px;
+  max-height: inherit;
+}
+
+.inner {
+  margin-top: 30px;
+  display: flex;
+  width: var(--inner-width);
+  height: inherit;
+}
+.left {
+  width: 45%;
+  height: 800px;
+}
+
+.wrap-image {
+  width: 556px;
+  height: 556px;
+  overflow: hidden;
+}
+.image-main {
+  width: 556px;
+  height: 556px;
+  &:hover {
+    scale: 1.6;
+    transition: 1s;
+  }
+}
+
+.list-img {
+  height: 107px;
+  width: 100%;
+}
+
+.image {
+  width: 107px;
+  height: 107px;
+  img {
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+  }
+}
+
+//a============
+
+.wrap-team {
+  height: 400px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  max-height: inherit;
+  background-color: #f2f2f4;
+  margin: 20px;
+  &:hover {
+    opacity: unset;
+    transition: 0.6s;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card-top {
+  display: flex;
+  width: 200px;
+  margin-bottom: 16px;
+}
+
+.right {
+  width: 55%;
+  height: 500px;
+  margin-left: 60px;
+  padding-top: 30px;
+}
+.title-product {
+  font-size: 30px;
+  color: #1b1919;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.price-product {
+  font-size: 30px;
+  color: #555555;
+  font-weight: 600;
+  padding: 24px 0;
+}
+
+.des-product {
+  color: #555555;
+  font-size: 14.5px;
+  margin-top: 24px;
+  font-weight: 300;
+}
+
+.send-mail {
+  width: var(--inner-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title-mail {
+  color: var(--text-black-color);
+  font-size: 20px;
+  margin: 24px 0;
+  font-weight: 500;
+}
+.input-mail {
+  border-bottom: 3px solid #b9babb;
+  input {
+    width: 520px;
+    height: 40px;
+    background-color: transparent;
+    color: var(--color-descrip);
+    padding: 15px 0;
+    border: none;
+    outline: none;
+  }
+  button {
+    width: 50px;
+    height: 40px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 200;
+    color: var(--color-descrip);
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+}

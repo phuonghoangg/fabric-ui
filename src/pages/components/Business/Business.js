@@ -1,9 +1,14 @@
 import classNames from 'classnames/bind';
 import styles from './Business.module.scss';
 import logoShip from '~/assets/image/feature.jpg';
+import { useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
-const Business = () => {
+const Business = ({ readMore }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/aboutUs');
+  };
   return (
     <div className={cx('wrapper')}>
       <div className={cx('inner')}>
@@ -29,7 +34,13 @@ const Business = () => {
           <div className={cx('des')}>
             -Internal training and job rotation are to build up dynamic and adaptive organizations.
           </div>
-          <button className={cx('button-learn')}>Learn More</button>
+          {readMore ? (
+            <button onClick={handleClick} className={cx('button-learn')}>
+              Learn More
+            </button>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>

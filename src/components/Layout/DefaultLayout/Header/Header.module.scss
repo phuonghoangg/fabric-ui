@@ -71,16 +71,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ff4800;
+  background-color: var(--primary);
   color: #fff;
   cursor: pointer;
   &:hover {
-    background-color: #d93d00;
+    background-color: var(--primary-hover);
     transition: 0.6s;
   }
   &:active {
-    background-color: #cc3a00;
-    border: 1px solid #bf3600;
+    background-color: var(--primary-active);
+    border: 1px solid var(--primary-border);
   }
 }
 .collapse {
@@ -105,7 +105,44 @@
     justify-content: flex-end;
   }
 }
-
+.form-input-login {
+  display: flex;
+  flex-direction: column;
+}
+.logo-login {
+  width: 200px;
+  height: 70px;
+  margin-bottom: 20px;
+}
+.input-modal {
+  padding: 10px 20px;
+  margin-bottom: 8px;
+  width: 300px;
+  color: #555555;
+  font-size: 15px;
+  border: 2px solid #e2c4c4;
+  outline: none;
+  border-radius: 5px;
+  &:focus {
+    border: 2px solid rgb(243, 151, 76);
+  }
+}
+.btn-login {
+  height: 40px;
+  background-color: var(--primary);
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+  &:active {
+    background-color: var(--primary-active);
+  }
+}
 .collapse-result {
   width: 100vh;
 }

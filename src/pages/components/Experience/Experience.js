@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Experience.module.scss';
 import logoAboutUs from '~/assets/image/aboutUs.jpg';
+import history from '~/assets/image/history.jpg';
 
 const cx = classNames.bind(styles);
 
@@ -16,23 +17,7 @@ const Experience = () => {
           and supply garment products to some reputed fashion brands across Europe.
         </div>
         <div className={cx('logistics')}>
-          <img
-            src="https://i0.wp.com/zeriatex.com/wp-content/uploads/2020/02/berivan-turkey-apparel-manufacturers-manufacturer.jpg?w=187&ssl=1"
-            className={cx('wrap-vehicle')}
-            alt=""
-          />
-
-          <img
-            src="https://i0.wp.com/zeriatex.com/wp-content/uploads/2020/02/berivan-turkey-apparel-manufacturers-manufacturer.jpg?w=187&ssl=1"
-            className={cx('wrap-vehicle')}
-            alt=""
-          />
-
-          <img
-            src="https://i0.wp.com/zeriatex.com/wp-content/uploads/2020/02/berivan-turkey-apparel-manufacturers-manufacturer.jpg?w=187&ssl=1"
-            className={cx('wrap-vehicle')}
-            alt=""
-          />
+          <img className={cx('history')} src={history} alt="" />
         </div>
         <div className={cx('inner-descript-1')}>
           <div className={cx('image-logo')}>

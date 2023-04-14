@@ -1,87 +1,65 @@
 import BannerChild from '../components/BannerChild/BannerChild';
 import classNames from 'classnames/bind';
 import styles from './BlogPage.module.scss';
-import imgBlog1 from '~/assets/image/blog-1.jpg';
-import imgBlog2 from '~/assets/image/blog-2.jpg';
 import { Pagination, Stack } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getAllBlog } from '~/redux/apiRequest';
+import { useDispatch, useSelector } from 'react-redux';
+import dayjs from 'dayjs';
 
 const cx = classNames.bind(styles);
 
-const data = [
-  {
-    image: imgBlog1,
-    title: 'Công ty COMO tặng khẩu trang cho Trường THCS Tùng Thiện Vương & Trường Mần non 3',
-    description:
-      'Tập thể cán bộ công nhân viên Công ty TNHH CÔ MÔ (COMO) chào mừng các trường trở lại hoạt động dạy và học sau một thời gian dài nghỉ phòng chống dịch COVID 19.',
-    time: '',
-  },
-  {
-    image: imgBlog2,
-    title: 'Đeo khẩu trang để đẩy lùi dịch bệnh',
-    description:
-      'Hôm 19-3, báo Tuổi Trẻ đã phối hợp với Công ty TNHH Como tổ chức tọa đàm “Làm thế nào để sử dụng khẩu trang hợp lý?”. Vấn đề đeo khẩu trang và chọn loại khẩu trang nào được đặc biệt quan tâm những ngày qua khi Chính phủ yêu cầu người dân phải đeo khẩu trang nơi công cộng. Hôm 19-3, báo Tuổi Trẻ đã phối hợp với Công ty TNHH Como tổ chức tọa đàm "Làm thế nào để sử dụng khẩu trang hợp lý?".      ',
-    time: '',
-  },
-  {
-    image: imgBlog1,
-    title: 'Công ty COMO tặng khẩu trang cho Trường THCS Tùng Thiện Vương & Trường Mần non 3',
-    description:
-      'Tập thể cán bộ công nhân viên Công ty TNHH CÔ MÔ (COMO) chào mừng các trường trở lại hoạt động dạy và học sau một thời gian dài nghỉ phòng chống dịch COVID 19.',
-    time: '',
-  },
-  {
-    image: imgBlog2,
-    title: 'Đeo khẩu trang để đẩy lùi dịch bệnh',
-    description:
-      'Hôm 19-3, báo Tuổi Trẻ đã phối hợp với Công ty TNHH Como tổ chức tọa đàm “Làm thế nào để sử dụng khẩu trang hợp lý?”. Vấn đề đeo khẩu trang và chọn loại khẩu trang nào được đặc biệt quan tâm những ngày qua khi Chính phủ yêu cầu người dân phải đeo khẩu trang nơi công cộng. Hôm 19-3, báo Tuổi Trẻ đã phối hợp với Công ty TNHH Como tổ chức tọa đàm "Làm thế nào để sử dụng khẩu trang hợp lý?".      ',
-    time: '',
-  },
-  {
-    image: imgBlog1,
-    title: 'Công ty COMO tặng khẩu trang cho Trường THCS Tùng Thiện Vương & Trường Mần non 3',
-    description:
-      'Tập thể cán bộ công nhân viên Công ty TNHH CÔ MÔ (COMO) chào mừng các trường trở lại hoạt động dạy và học sau một thời gian dài nghỉ phòng chống dịch COVID 19.',
-    time: '',
-  },
-  {
-    image: imgBlog2,
-    title: 'Đeo khẩu trang để đẩy lùi dịch bệnh',
-    description:
-      'Hôm 19-3, báo Tuổi Trẻ đã phối hợp với Công ty TNHH Como tổ chức tọa đàm “Làm thế nào để sử dụng khẩu trang hợp lý?”. Vấn đề đeo khẩu trang và chọn loại khẩu trang nào được đặc biệt quan tâm những ngày qua khi Chính phủ yêu cầu người dân phải đeo khẩu trang nơi công cộng. Hôm 19-3, báo Tuổi Trẻ đã phối hợp với Công ty TNHH Como tổ chức tọa đàm "Làm thế nào để sử dụng khẩu trang hợp lý?".      ',
-    time: '',
-  },
-];
-
 const BlogPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const dataBlogs = useSelector((state) => state.blog.blogs?.allBlog);
+
+  const [page, setPage] = useState(0);
+  const [limit, setLimit] = useState(2);
+  // console.log('allBlog: ', allBlog);
+  useEffect(() => {
+    let payload = {
+      skip: page,
+      limit: limit,
+    };
+    getAllBlog(payload, dispatch);
+  }, [dispatch, limit, page]);
   return (
     <div className={cx('wrapper')}>
       <BannerChild title="Blog" />
       <div className={cx('inner')}>
         <div className={cx('list-blog')}>
-          {data.map((item, index) => (
+          {dataBlogs?.allBlog.map((item, index) => (
             <div key={index} className={cx('blog')}>
               <img src={item.image} className={cx('image')} alt="" />
               <div className={cx('content')}>
                 <div className={cx('title-content')}>{item.title}</div>
-                <div className={cx('description')}>{item.description}</div>
-                <div onClick={() => navigate('/blog/1')} className={cx('read-more')}>
+                <div dangerouslySetInnerHTML={{ __html: item.description }} className={cx('description')}></div>
+                <div onClick={() => navigate(`/blog/${item._id}`)} className={cx('read-more')}>
                   read more <p>&gt;</p>
                 </div>
               </div>
               <div className={cx('date-time')}>
-                <div className={cx('date')}>03</div>
-                <div className={cx('month')}>APR</div>
+                <div className={cx('date')}>{dayjs(item.createAt).format('DD')}</div>
+                <div className={cx('month')}>{dayjs(item.createAt).format('MMMM')}</div>
               </div>
             </div>
           ))}
           <div className={cx('bla')}>
-            <Stack spacing={2}>
-              <Pagination size="large" shape="rounded" variant="outlined" count={5} />
-            </Stack>
+            {dataBlogs && (
+              <Stack spacing={2}>
+                <Pagination
+                  onChange={(e, value) => setPage(value - 1)}
+                  size="large"
+                  shape="rounded"
+                  variant="outlined"
+                  count={dataBlogs.count}
+                />
+              </Stack>
+            )}
           </div>
         </div>
         <div className={cx('recent')}>
@@ -95,11 +73,11 @@ const BlogPage = () => {
           </div>
           <div className={cx('list-recent')}>
             <div className={cx('title')}>Recent Post</div>
-            {data.map((item, index) => {
+            {dataBlogs?.allBlog.map((item, index) => {
               return (
                 <div key={index} className={cx('list-post')}>
                   <img src={item.image} className={cx('image-post')} alt="" />
-                  <div className={cx('des-post')}>Lorem ipsum dolor sit amet consec adipis elit</div>
+                  <div className={cx('des-post')}>{item.title}</div>
                 </div>
               );
             })}

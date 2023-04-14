@@ -13,7 +13,8 @@ import { faCaretDown, faCaretUp, faCheck, faChevronDown, faChevronUp, faX } from
 import { Checkbox, Collapse, FormControlLabel } from '@mui/material';
 import { pink, grey } from '@mui/material/colors';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllType } from '~/redux/apiRequest';
+import { getAllProduct, getAllProductPagi, getAllType } from '~/redux/apiRequest';
+import { useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 const intro = {
@@ -35,114 +36,24 @@ const optionSoft = [
     title: 'Price, high to low',
   },
 ];
-const typeProduct = [
-  {
-    id: 1,
-    name: 'BamBoo Jersey',
-    total: 7,
-  },
-  {
-    id: 2,
-    name: 'Bengalene',
-    total: 1,
-  },
-  {
-    id: 3,
-    name: 'Blend',
-    total: 2,
-  },
-  {
-    id: 4,
-    name: 'asd',
-    total: 2,
-  },
-  {
-    id: 5,
-    name: 'zxc',
-    total: 2,
-  },
-  {
-    id: 6,
-    name: 'vbn',
-    total: 2,
-  },
-];
 const typeWeight = [
   {
     id: 1,
     name: 'Weight - Medium',
-    total: 7,
   },
   {
     id: 2,
     name: 'Weight - Light',
-    total: 7,
   },
   {
     id: 3,
     name: 'Weight - Heavy',
-    total: 7,
   },
 ];
 
-const dataProduct = [
-  {
-    image:
-      'https://cdn.shopify.com/s/files/1/0017/0222/products/IMG_2820_63ba4546-3abc-4a44-8b15-7d513779583c_260x260_crop_top.jpg?v=1680344627',
-    name: 'Last Chance Of Doppio Crepe Storm Blue',
-    price: '$194.60 per piece',
-  },
-  {
-    image:
-      'https://cdn.shopify.com/s/files/1/0017/0222/products/IMG_2820_63ba4546-3abc-4a44-8b15-7d513779583c_260x260_crop_top.jpg?v=1680344627',
-    name: 'Last Chance Of Doppio Crepe Storm Blue',
-    price: '$194.60 per piece',
-  },
-  {
-    image:
-      'https://cdn.shopify.com/s/files/1/0017/0222/products/IMG_2820_63ba4546-3abc-4a44-8b15-7d513779583c_260x260_crop_top.jpg?v=1680344627',
-    name: 'Last Chance Of Doppio Crepe Storm Blue',
-    price: '$194.60 per piece',
-  },
-  {
-    image:
-      'https://cdn.shopify.com/s/files/1/0017/0222/products/IMG_2820_63ba4546-3abc-4a44-8b15-7d513779583c_260x260_crop_top.jpg?v=1680344627',
-    name: 'Last Chance Of Doppio Crepe Storm Blue',
-    price: '$194.60 per piece',
-  },
-  {
-    image:
-      'https://cdn.shopify.com/s/files/1/0017/0222/products/IMG_2820_63ba4546-3abc-4a44-8b15-7d513779583c_260x260_crop_top.jpg?v=1680344627',
-    name: 'Last Chance Of Doppio Crepe Storm Blue',
-    price: '$194.60 per piece',
-  },
-  {
-    image:
-      'https://cdn.shopify.com/s/files/1/0017/0222/products/IMG_2820_63ba4546-3abc-4a44-8b15-7d513779583c_260x260_crop_top.jpg?v=1680344627',
-    name: 'Last Chance Of Doppio Crepe Storm Blue',
-    price: '$194.60 per piece',
-  },
-  {
-    image:
-      'https://cdn.shopify.com/s/files/1/0017/0222/products/IMG_2820_63ba4546-3abc-4a44-8b15-7d513779583c_260x260_crop_top.jpg?v=1680344627',
-    name: 'Last Chance Of Doppio Crepe Storm Blue',
-    price: '$194.60 per piece',
-  },
-  {
-    image:
-      'https://cdn.shopify.com/s/files/1/0017/0222/products/IMG_2820_63ba4546-3abc-4a44-8b15-7d513779583c_260x260_crop_top.jpg?v=1680344627',
-    name: 'Last Chance Of Doppio Crepe Storm Blue',
-    price: '$194.60 per piece',
-  },
-  {
-    image:
-      'https://cdn.shopify.com/s/files/1/0017/0222/products/IMG_2820_63ba4546-3abc-4a44-8b15-7d513779583c_260x260_crop_top.jpg?v=1680344627',
-    name: 'Last Chance Of Doppio Crepe Storm Blue',
-    price: '$194.60 per piece',
-  },
-];
 const Apparel = () => {
   const allType = useSelector((state) => state.typeProduct.typeProduct?.allType);
+  const dataProduct = useSelector((state) => state.product.products?.allProduct);
   const [open, setOpen] = useState(false);
   const [openCollapseProduct, setOpenCollapseProduct] = useState(true);
   const [openCollapseWeight, setOpenCollapseWeight] = useState(true);
@@ -151,8 +62,9 @@ const Apparel = () => {
   const [checkedProduct, setCheckedProduct] = useState([]);
   const [checkedWeight, setCheckedWeight] = useState([]);
 
-  console.log('checked product', checkedProduct);
+  // console.log('checked product', checkedProduct);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleCheckProduct = (id) => {
     setCheckedProduct((prev) => {
@@ -195,10 +107,16 @@ const Apparel = () => {
   const hide = () => {
     setOpen(false);
   };
-
   useEffect(() => {
     getAllType(dispatch);
+    let payload = {
+      skip: '',
+      limit: '',
+    };
+    getAllProductPagi(payload, dispatch);
   }, [dispatch]);
+
+  // console.log('allProduct: ', allProduct);
   return (
     <div className={cx('wrapper')}>
       <div className={cx('intro')}>
@@ -213,7 +131,7 @@ const Apparel = () => {
             <div className={cx('sort-left')}>
               View As <img className={cx('logo-grid')} src={gridIcon} alt="" />
             </div>
-            <div className={cx('sort-center')}> 1225 product</div>
+            <div className={cx('sort-center')}> {dataProduct?.count} product</div>
             <Tippy
               interactive
               placement="bottom-start"
@@ -394,9 +312,9 @@ const Apparel = () => {
                             {typeItem.name}
                           </label>
                         </div>
-                        <label className={checkedWeight.includes(typeItem.id) ? cx('label-active') : cx('')}>
+                        {/* <label className={checkedWeight.includes(typeItem.id) ? cx('label-active') : cx('')}>
                           ({typeItem.total})
-                        </label>
+                        </label> */}
                       </div>
                     ))}
                   </div>
@@ -405,11 +323,11 @@ const Apparel = () => {
             </div>
             <div className={cx('product-view')}>
               {/* itemmm start */}
-              {dataProduct.map((item, index) => {
+              {dataProduct?.allProduct.map((item, index) => {
                 return (
-                  <div key={index} className={cx('view-item')}>
-                    <img className={cx('image-product')} alt="" src={item.image} />
-                    <div className={cx('name-product')}>{item.name}</div>
+                  <div onClick={() => navigate(`/apparel/${item._id}`)} key={index} className={cx('view-item')}>
+                    <img className={cx('image-product')} alt="" src={item.images[0]} />
+                    <div className={cx('name-product')}>{item.nameProduct}</div>
                     <div className={cx('price')}>{item.price}</div>
                   </div>
                 );

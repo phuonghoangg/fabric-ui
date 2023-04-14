@@ -8,6 +8,11 @@ const productSlice = createSlice({
       isFetching: false,
       error: false,
     },
+    aProduct: {
+      product: null,
+      isFetching: false,
+      error: false,
+    },
     handleProduct: {
       isFetching: false,
       error: false,
@@ -26,6 +31,17 @@ const productSlice = createSlice({
       state.products.isFetching = false;
       state.products.error = true;
     },
+    getaProductStart: (state) => {
+      state.aProduct.isFetching = true;
+    },
+    getaProductSucess: (state, action) => {
+      state.aProduct.isFetching = false;
+      state.aProduct.product = action.payload;
+    },
+    getaProductFail: (state) => {
+      state.aProduct.isFetching = false;
+      state.aProduct.error = true;
+    },
     createProductStart: (state) => {
       state.handleProduct.isFetching = true;
     },
@@ -34,6 +50,18 @@ const productSlice = createSlice({
       state.handleProduct.success = true;
     },
     createProductFail: (state) => {
+      state.handleProduct.isFetching = false;
+      state.handleProduct.error = true;
+    },
+    updateProductStart: (state) => {
+      state.handleProduct.isFetching = true;
+      state.handleProduct.success = false;
+    },
+    updateProductSuccess: (state) => {
+      state.handleProduct.isFetching = false;
+      state.handleProduct.success = true;
+    },
+    updateProductFail: (state) => {
       state.handleProduct.isFetching = false;
       state.handleProduct.error = true;
     },
@@ -47,5 +75,11 @@ export const {
   createProductFail,
   createProductStart,
   createProductSuccess,
+  updateProductFail,
+  updateProductStart,
+  updateProductSuccess,
+  getaProductFail,
+  getaProductStart,
+  getaProductSucess,
 } = productSlice.actions;
 export default productSlice.reducer;
