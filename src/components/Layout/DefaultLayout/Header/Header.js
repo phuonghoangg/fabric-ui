@@ -164,7 +164,12 @@ const Header = () => {
 
           <div className={cx('form-input-login')}>
             <input onChange={(e) => setEmail(e.target.value)} className={cx('input-modal')} placeholder="Email" />
-            <input onChange={(e) => setPassword(e.target.value)} className={cx('input-modal')} placeholder="password" />
+            <input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              className={cx('input-modal')}
+              placeholder="password"
+            />
             <button onClick={handleLogin} className={cx('btn-login')}>
               Login
             </button>
